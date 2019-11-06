@@ -1,2 +1,2 @@
-# react-start-kit
-a react start initialize project 
+# webpack-react-kit
+a webpack react initialize project 
