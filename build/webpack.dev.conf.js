@@ -24,7 +24,7 @@ module.exports = webpackMerge(baseWebpack, {
       fix: true,
       context: "src",
       configFile: path.resolve(__dirname, '../.stylelintrc.js'), // 指定 stylelint 配置的文件 
-      files: '**/*.less',
+      files: '**/*.{css,less}',
       syntax: 'less'
     }),
     new FriendlyErrorsPlugin({
