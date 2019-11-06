@@ -13,16 +13,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.{css,less}": [
-      "npm run lint-css",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
-      "npm run lint-ts",
-      "git add"
-    ]
-  },
   "keywords": [
     "react",
     "typescript"
