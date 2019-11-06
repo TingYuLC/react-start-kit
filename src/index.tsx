@@ -1,6 +1,6 @@
 import './index.less';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import Hello from '@/Hello';
+import Hello from '@/components/Hello';
 
-ReactDom.render(<Hello name="webpack" />, document.getElementById('app') as HTMLElement);
+ReactDom.render(<Hello name="react" />, document.getElementById('app') as HTMLElement);
