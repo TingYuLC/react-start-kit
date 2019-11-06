@@ -40,7 +40,8 @@ module.exports = {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'less-loader'
+          'less-loader',
+          devMode ? '' : 'postcss-loader'
         ]
       },
       {
