@@ -1,6 +1,6 @@
 module.exports = {
   dev: {
-    open: true,
+    open: false,
     host: 'localhost',
     port: 8080,
     hot: true,
