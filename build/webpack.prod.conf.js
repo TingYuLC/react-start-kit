@@ -38,8 +38,8 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "static/css/[name][contenthash].css",
-      chunkFilename: "static/css/[name][contenthash].css"
+      filename: "static/css/[name].[contenthash].css",
+      chunkFilename: "static/css/[name].[contenthash].css"
     })
   ]
 });
