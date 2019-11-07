@@ -1,9 +1,12 @@
 'use strict'
 const path = require('path');
+const config = require('../config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const EslintFriendlyFormatter = require('eslint-friendly-formatter');
 
 const devMode = process.env.NODE_ENV === 'development';
+const { eslintFix } = config.dev;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -24,7 +27,19 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)(\?.*)?$/,
-        loader: ['babel-loader', 'awesome-typescript-loader'],
+        use: [
+          'babel-loader',
+          'awesome-typescript-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              fix: eslintFix,
+              emitError: false,
+              emitWarning: true,
+              formatter: EslintFriendlyFormatter
+            },
+          }
+        ],
         include: [resolve('src')],
         exclude: /node_modules/
       },
@@ -32,7 +47,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
       },
       {
