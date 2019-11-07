@@ -6,8 +6,9 @@ const webpackMerge = require('webpack-merge');
 const baseWebpack = require('./webpack.base.conf');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const stylelintFormatter = require('stylelint-formatter-pretty');
 
-const { open, host, port, hot, quiet, notifyOnErrors } = config.dev;
+const { open, host, port, hot, stylelintFix, notifyOnQuiet, notifyOnErrors } = config.dev;
 
 module.exports = webpackMerge(baseWebpack, {
   mode: 'development',
@@ -17,15 +18,18 @@ module.exports = webpackMerge(baseWebpack, {
     host: host,
     port: port,
     hot: hot,
-    quiet: quiet
+    quiet: notifyOnQuiet
   },
   plugins: [
     new StyleLintPlugin({
-      fix: true,
+      fix: stylelintFix,
       context: "src",
       configFile: path.resolve(__dirname, '../.stylelintrc.js'), // 指定 stylelint 配置的文件 
       files: '**/*.{css,less}',
-      syntax: 'less'
+      syntax: 'less',
+      emitError: false,
+      emitWarning: true,
+      formatter: stylelintFormatter
     }),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {

@@ -4,8 +4,10 @@ module.exports = {
     host: 'localhost',
     port: 8080,
     hot: true,
-    quiet: true,
-    notifyOnErrors: true
+    notifyOnQuiet: true,
+    notifyOnErrors: true,
+    stylelintFix: true,
+    eslintFix: true
   },
   build: {}
 }
