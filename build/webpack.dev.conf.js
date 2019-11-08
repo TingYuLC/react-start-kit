@@ -28,7 +28,7 @@ module.exports = webpackMerge(baseWebpack, {
       files: '**/*.{css,less}',
       syntax: 'less',
       emitError: false,
-      emitWarning: true,
+      emitWarning: true, 
       formatter: stylelintFormatter
     }),
     new FriendlyErrorsPlugin({

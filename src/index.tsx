@@ -1,6 +1,5 @@
-import './index.less';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import Hello from '@/components/Hello';
+import App from '@/App';
 
-ReactDom.render(<Hello name="react" />, document.getElementById('app') as HTMLElement);
+ReactDom.render(<App />, document.getElementById('app') as HTMLElement);

@@ -7,7 +7,7 @@ module.exports = {
     notifyOnQuiet: true,
     notifyOnErrors: true,
     stylelintFix: true,
-    eslintFix: true
+    eslintFix: false
   },
   build: {}
 }
