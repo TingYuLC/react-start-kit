@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    'react-hooks',
     '@typescript-eslint',
   ],
   settings: {
@@ -31,7 +32,9 @@ module.exports = {
     },
   },
   rules: {
-    "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
+    'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
+    'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
+    'react/jsx-filename-extension': ['error', { 'extensions': ['.ts', '.tsx'] }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off'
   },

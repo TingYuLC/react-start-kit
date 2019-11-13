@@ -1,4 +1,4 @@
-import Carouse from '@/components/Carouse/Index.tsx';
+import Carouse from '@/components/Carouse';
 import Hello from '@/components/Hello';
 
 export {

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Carouse } from '@/components';
+import Movie from '@/demo';
 
 function App() {
   return (
-    <div>
-      <Carouse />
+    <div className="app-wrapper">
+      <Movie />
     </div>
   );
 }

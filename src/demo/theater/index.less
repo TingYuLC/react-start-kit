@@ -1,0 +1,64 @@
+.demo-theater {
+  width: 100%;
+
+  .theater-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    background-color: #282c34;
+    cursor: pointer;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .theater-search {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+
+    input[type="submit"] {
+      width: 80px;
+      margin-left: 5px;
+      padding: 5px;
+      border: 1px solid black;
+      color: black;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      color: antiquewhite;
+      background-color: #282c34;
+    }
+
+    > input[type="text"] {
+      width: 40%;
+      min-width: 170px;
+    }
+  }
+
+  .theater-movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .theater-movie {
+      max-width: 25%;
+      padding: 5px 25px 10px 25px;
+
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
