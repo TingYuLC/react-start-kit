@@ -1,7 +1,7 @@
 import Carouse from '@/components/Carouse';
-import Hello from '@/components/Hello';
+import Rating from '@/components/Rating';
 
 export {
   Carouse,
-  Hello,
+  Rating,
 };

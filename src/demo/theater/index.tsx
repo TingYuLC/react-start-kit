@@ -1,12 +1,10 @@
 import * as React from 'react';
-import Header from '@/demo/theater/Header';
-import Search from '@/demo/theater/Search';
-import Movie from '@/demo/theater/Movie';
+import Poster from '@/demo/theater/Poster';
 import '@/demo/theater/index.less';
 
 const { useEffect, useState } = React;
 
-const MOVIE_API_URL = 'https://www.omdbapi.com/?s=man&apikey=4c3d52ed';
+const MOVIE_API_URL = 'https://douban-api.uieee.com/v2/movie/in_theaters?start=0&count=6';
 
 const Theater = () => {
   const [movies, setMovies] = useState([]);
@@ -15,30 +13,24 @@ const Theater = () => {
     fetch(MOVIE_API_URL)
       .then((data) => data.json())
       .then((data) => {
-        setMovies(data.Search);
+        setMovies(data.subjects);
       });
   }, []);
 
-  const search = (value: string) => {
-    fetch(`https://www.omdbapi.com/?s=${value}&apikey=4a3b711b`)
-      .then((data) => data.json())
-      .then((data) => {
-        setMovies(data.Search);
-      });
-  };
 
   return (
     <div className="demo-theater">
-      <Header text="MOVIE SEARCH" />
-      <Search search={search} />
       <div className="theater-movies">
         {
-          movies.map((movie) => {
-            const {
-              Title, Poster, Year, imdbID,
-            } = movie;
-            return <Movie title={Title} img={Poster} year={Year} key={imdbID} />;
-          })
+          movies.map((movie) => (
+            <Poster
+              key={movie.id}
+              title={movie.title}
+              img={movie.images && movie.images.small}
+              pubdate={movie.mainland_pubdate}
+              rating={movie.rating}
+            />
+          ))
         }
       </div>
     </div>

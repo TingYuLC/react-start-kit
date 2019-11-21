@@ -36,6 +36,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
     'react/jsx-filename-extension': ['error', { 'extensions': ['.ts', '.tsx'] }],
     'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off'
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'no-plusplus': 'off'
   },
 };
