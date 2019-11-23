@@ -95,12 +95,15 @@ module.exports = {
       favicon: 'template/favicon.ico',
     }),
     new AddAssetHtmlWebpackPlugin({
-      filepath: resolve('dll/vendor.*.dll.js'),
+      filepath: [resolve('dll/vendor.*.dll.js'), resolve('dll/polyfill.*.dll.js')],
       publicPath: './static/js',
       outputPath: 'static/js'
     }),
     new webpack.DllReferencePlugin({
       manifest: resolve('dll/vendor.manifest.json')
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: resolve('dll/polyfill.manifest.json')
     })
   ]
 }

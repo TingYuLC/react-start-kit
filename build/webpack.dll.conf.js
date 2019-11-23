@@ -6,7 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    vendor: ['react', 'react-dom', 'axios', 'core-js/stable', 'regenerator-runtime/runtime']
+    vendor: ['react', 'react-dom', 'axios'],
+    polyfill: ['core-js/stable', 'regenerator-runtime/runtime']
   },
   output: {
     filename: '[name].[chunkhash].dll.js',
