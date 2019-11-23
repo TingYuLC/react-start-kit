@@ -1,7 +1,9 @@
 'use strict'
 const path = require('path');
 const config = require('../config');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EslintFriendlyFormatter = require('eslint-friendly-formatter');
 
@@ -91,6 +93,14 @@ module.exports = {
       filename: 'index.html',
       inject: true,
       favicon: 'template/favicon.ico',
+    }),
+    new AddAssetHtmlWebpackPlugin({
+      filepath: resolve('dll/vendor.*.dll.js'),
+      publicPath: './static/js',
+      outputPath: 'static/js'
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: resolve('dll/vendor.manifest.json')
     })
   ]
 }

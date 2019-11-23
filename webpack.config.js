@@ -8,6 +8,9 @@ module.exports = () => {
     case 'production':
       webpackConfig = require('./build/webpack.prod.conf');
       break;
+    case 'dll':
+      webpackConfig = require('./build/webpack.dll.conf');
+      break;
     default:
         webpackConfig = require('./build/webpack.dev.conf');
       break;

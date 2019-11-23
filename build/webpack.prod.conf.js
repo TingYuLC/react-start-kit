@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserWebpackPlugin =  require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(baseWebpackConfig, {
@@ -13,6 +14,15 @@ module.exports = merge(baseWebpackConfig, {
     chunkFilename: 'static/js/[name].[chunkhash].js'
   },
   optimization: {
+    minimizer: [
+      new TerserWebpackPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          }
+        },
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         vendor: {
