@@ -1,4 +1,4 @@
-import Carouse from '@/components/Carouse';
+import Carouse from '@/components/Carouse/Carouse';
 import Rating from '@/components/Rating';
 
 export {
