@@ -26,10 +26,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)(\?.*)?$/,
+        test: /\.(js|jsx|ts|tsx)(\?.*)?$/,
         use: [
           'babel-loader',
-          'awesome-typescript-loader',
           {
             loader: 'eslint-loader',
             options: {

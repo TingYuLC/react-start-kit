@@ -1,4 +1,5 @@
 import * as React from 'react';
+import axios from 'axios';
 import Poster from '@/demo/theater/Poster';
 import '@/demo/theater/index.less';
 
@@ -10,10 +11,9 @@ const Theater = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch(MOVIE_API_URL)
-      .then((data) => data.json())
+    axios.get(MOVIE_API_URL)
       .then((data) => {
-        setMovies(data.subjects);
+        setMovies(data.data.subjects);
       });
   }, []);
 
