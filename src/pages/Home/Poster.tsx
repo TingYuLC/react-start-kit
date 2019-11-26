@@ -12,12 +12,21 @@ interface PosterProps {
   img: string;
   pubdate: string;
   rating: RatingProps;
+  posterClick: () => void;
 }
 
 const Poster = (props: PosterProps) => {
-  const { img, title } = props;
+  const { img, title, posterClick } = props;
+
+  const callPosterFunc = () => {
+    posterClick();
+  };
+
   return (
-    <div className="movies-poster">
+    <div
+      className="movies-poster"
+      onClick={callPosterFunc}
+    >
       <img className="poster-img" src={img} alt={img} />
       <p className="poster-title">{title}</p>
       <div className="poster-rating">

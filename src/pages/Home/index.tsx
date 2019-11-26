@@ -1,7 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
-import Poster from '@/demo/theater/Poster';
-import '@/demo/theater/index.less';
+import { useHistory } from 'react-router-dom';
+import Poster from '@/pages/Home/Poster';
+import '@/pages/Home/index.less';
 
 const { useEffect, useState } = React;
 
@@ -9,6 +10,7 @@ const MOVIE_API_URL = 'https://douban-api.uieee.com/v2/movie/in_theaters?start=0
 
 const Theater = () => {
   const [movies, setMovies] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     axios.get(MOVIE_API_URL)
@@ -17,6 +19,9 @@ const Theater = () => {
       });
   }, []);
 
+  const toMovieDetail = (id: String) => {
+    history.push(`movie-detail/${id}`);
+  };
 
   return (
     <div className="demo-theater">
@@ -28,7 +33,8 @@ const Theater = () => {
               title={movie.title}
               img={movie.images && movie.images.small}
               pubdate={movie.mainland_pubdate}
-              rating={movie.rating}
+              rating={movie.rating.average}
+              posterClick={() => toMovieDetail(movie.id)}
             />
           ))
         }
