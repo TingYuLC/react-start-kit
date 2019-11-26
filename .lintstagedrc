@@ -1,10 +1,10 @@
 {
   "src/**/*.{css,less}": [
-    "npm run lint-css",
+    "stylelint",
     "git add"
   ],
   "src/**/*.{ts,tsx}": [
-    "npm run lint-ts",
+    "eslint",
     "git add"
   ]
 }
