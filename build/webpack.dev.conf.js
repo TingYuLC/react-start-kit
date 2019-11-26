@@ -8,7 +8,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const stylelintFormatter = require('stylelint-formatter-pretty');
 
-const { open, host, port, hot, stylelintFix, notifyOnQuiet, notifyOnErrors } = config.dev;
+const { open, host, port, hot, stylelintFix, historyApiFallback, notifyOnQuiet, notifyOnErrors } = config.dev;
 
 module.exports = webpackMerge(baseWebpack, {
   mode: 'development',
@@ -18,7 +18,8 @@ module.exports = webpackMerge(baseWebpack, {
     host: host,
     port: port,
     hot: hot,
-    quiet: notifyOnQuiet
+    quiet: notifyOnQuiet,
+    historyApiFallback: historyApiFallback
   },
   plugins: [
     new StyleLintPlugin({

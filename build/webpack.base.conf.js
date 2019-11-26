@@ -18,6 +18,9 @@ module.exports = {
   entry: {
     main: './src/index.tsx'
   },
+  output: {
+    publicPath: '/'
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.css'],
     alias: {
@@ -96,7 +99,7 @@ module.exports = {
     }),
     new AddAssetHtmlWebpackPlugin({
       filepath: [resolve('dll/vendor.*.dll.js'), resolve('dll/polyfill.*.dll.js')],
-      publicPath: './static/js',
+      publicPath: '/static/js',
       outputPath: 'static/js'
     }),
     new webpack.DllReferencePlugin({
