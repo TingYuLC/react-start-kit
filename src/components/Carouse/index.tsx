@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '@/components/Carouse/index.less';
+import './index.less';
 
 interface CarouseProps {
   index?: string;
@@ -99,8 +99,8 @@ class Carouse extends React.Component <CarouseProps, CarouseState> {
           <li className="carouse-board-item">4</li>
           <li className="carouse-board-item">1</li>
         </ul>
-        <span className="carouse-btn carouse-prev" onClick={this.prevClick}>{'<'}</span>
-        <span className="carouse-btn carouse-next" onClick={this.nextClick}>{'>'}</span>
+        <span className="carouse-btn carouse-prev" role="presentation" onClick={this.prevClick}>{'<'}</span>
+        <span className="carouse-btn carouse-next" role="presentation" onClick={this.nextClick}>{'>'}</span>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { starEmpty, starFull, starHalf } from '@/static';
-import '@/components/Rating/index.less';
+import './index.less';
 
 interface StarProps {
   fullStar?: string;
@@ -44,11 +44,9 @@ const Star = (props: RatingProps) => {
 
 const Rating = (props: RatingProps) => {
   const ratingProps = { ...defaultProps, ...props };
-  const { rating } = ratingProps;
   return (
     <div className="component-rating">
       {Star(ratingProps)}
-      <p className="rating-average">{rating}</p>
     </div>
   );
 };

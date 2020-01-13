@@ -1,8 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import Poster from '@/pages/Home/Poster';
-import '@/pages/Home/index.less';
+import Poster from './Poster';
+import './index.less';
 
 const { useEffect, useState } = React;
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Home, MovieDetail } from '@/pages';
+import { Home, MovieDetail, Theme } from '@/pages';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
         </Route>
         <Route path="/movie-detail/:id">
           <MovieDetail />
+        </Route>
+        <Route path="/theme">
+          <Theme />
         </Route>
       </Switch>
     </div>

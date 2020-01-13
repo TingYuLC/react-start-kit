@@ -10,12 +10,14 @@
     "declaration": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "*": ["types/*"]
     }
   },
   "include": [
     "src/**/*",
-    "lib/**/*"
+    "lib/**/*",
+    "types"
   ],
   "exclude": [
     "node_modules"

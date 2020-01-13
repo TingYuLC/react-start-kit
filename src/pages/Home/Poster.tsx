@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Rating } from '@/components/';
+import './Poster.less';
+import { Rating } from '@/components';
 
 interface RatingProps {
   average: number;
@@ -24,6 +25,7 @@ const Poster = (props: PosterProps) => {
 
   return (
     <div
+      role="presentation"
       className="movies-poster"
       onClick={callPosterFunc}
     >
@@ -31,6 +33,7 @@ const Poster = (props: PosterProps) => {
       <p className="poster-title">{title}</p>
       <div className="poster-rating">
         <Rating rating={4.6} />
+        <span>{4.6}</span>
       </div>
     </div>
   );
