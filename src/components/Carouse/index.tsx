@@ -11,7 +11,7 @@ interface CarouseState {
   lock: boolean;
 }
 
-let panels:Array<Element>;
+let panels: Array<Element>;
 
 class Carouse extends React.Component <CarouseProps, CarouseState> {
   constructor(props: Readonly<{}>) {

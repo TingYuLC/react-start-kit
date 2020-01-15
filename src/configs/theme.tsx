@@ -1,4 +1,4 @@
-const colorConfigs: {color: string; name: string;}[] = [
+const colorConfigs: {color: string; name: string}[] = [
   {
     color: '#937eff',
     name: 'BlueViolet',

@@ -38,8 +38,8 @@ const MovieDetail = () => {
           poster: images && images.large,
           subTitle: `${originalTitle} (${year})`,
           meta: countries.concat(genres).join('/'),
-          directors: directors.map((item: {name: string;}) => item.name).join(' '),
-          casts: casts.map((item: {name: string;}) => item.name).join(' '),
+          directors: directors.map((item: {name: string}) => item.name).join(' '),
+          casts: casts.map((item: {name: string}) => item.name).join(' '),
           ratingAverage: rating.average,
           ratingsCount,
         });

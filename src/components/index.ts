@@ -1,5 +1,5 @@
-import Carouse from '@/components/Carouse';
-import Rating from '@/components/Rating';
+import Carouse from './Carouse';
+import Rating from './Rating';
 
 export {
   Carouse,

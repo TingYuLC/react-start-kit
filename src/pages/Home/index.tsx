@@ -11,7 +11,6 @@ const MOVIE_API_URL = 'https://douban-api.uieee.com/v2/movie/in_theaters?start=0
 const Theater = () => {
   const [movies, setMovies] = useState([]);
   const history = useHistory();
-
   useEffect(() => {
     axios.get(MOVIE_API_URL)
       .then((data) => {
@@ -19,7 +18,7 @@ const Theater = () => {
       });
   }, []);
 
-  const toMovieDetail = (id: String) => {
+  const toMovieDetail = (id: string) => {
     history.push(`movie-detail/${id}`);
   };
 
