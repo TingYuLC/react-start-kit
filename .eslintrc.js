@@ -6,7 +6,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb',
+    "plugin:@typescript-eslint/recommended",
+    "airbnb"
   ],
   globals: {
     Atomics: 'readonly',
@@ -32,6 +33,7 @@ module.exports = {
     },
   },
   rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "linebreak-style": [0 ,"error", "windows"], //允许windows开发环境
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
     'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
