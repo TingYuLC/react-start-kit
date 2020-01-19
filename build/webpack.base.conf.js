@@ -22,7 +22,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.css'],
+    extensions: ['.tsx', '.ts', 'jsx', '.js', '.css'],
     alias: {
       '@': resolve('src'),
       '@img': resolve('src/static/images')
